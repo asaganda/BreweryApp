@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Brewery</title>
+  <link rel="stylesheet" href="">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+  var output = $.ajax({
+      url: 'http://api.brewerydb.com/v2/search/geo/point?lat=35.772096&lng=-78.638614&radius=20&key=c68924590945efd63a0e9d189ffca38c',
+      type: 'GET',
+      data: {},
+      dataType: 'json',
+      success: function(data) { 
+        // document.getElementById("output").innerHTML
+        
+        console.log(data.data); 
+      },
+  });
+</script>
+</head>
+<body>
+  <div>
+    <h1>still testing</h1>
+    <button onclick="doIt()">Run</button>
+    <div id="output">the data:</div>
+  </div>
+  
+</body>
+</html>
