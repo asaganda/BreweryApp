@@ -12,11 +12,16 @@
       type: 'GET',
       data: {},
       dataType: 'json',
-      success: function(data) { 
-        // document.getElementById("output").innerHTML
+      success: function(data) {
+
+        // console.log(data);
+      
+        for (var i in data.data) {
         
-        console.log(data.data); 
-      },
+          $("ol").append("<li>"+data.data[i].brewery.name+"</li>");
+          
+        };
+      }
   });
 </script>
 </head>
@@ -24,7 +29,9 @@
   <div>
     <h1>still testing</h1>
     <button onclick="doIt()">Run</button>
-    <div id="output">the data:</div>
+    <div>Breweries:
+      <ol></ol>
+    </div>
   </div>
   
 </body>
