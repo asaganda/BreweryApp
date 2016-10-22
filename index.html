@@ -23,6 +23,18 @@
         };
       }
   });
+
+  navigator.geolocation.getCurrentPosition(someThing);
+
+  function someThing(position) {
+      console.log("SUCCESS");
+
+      var lat   = position.coords.latitude;
+      var long  = position.coords.longitude;
+      
+      console.log(lat, long);
+  };
+
 </script>
 </head>
 <body>
