@@ -6,42 +6,8 @@
   <title>Brewery</title>
   <link rel="stylesheet" href="">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script>
-
-$(document).ready(function() {
-  $('button').click(function() {
-                            navigator.geolocation.getCurrentPosition(geoLocation);
-
-                            function geoLocation(position) {
-                                
-                              console.log("SUCCESS");
-
-                              var lat   = position.coords.latitude;
-                              var long  = position.coords.longitude;
-                              
-                              console.log(lat, long); 
-
-                              $.ajax({
-                                  url: 'http://api.brewerydb.com/v2/search/geo/point?lat=' +lat+ '&lng=' +long+ '&radius=20&key=c68924590945efd63a0e9d189ffca38c',
-                                  type: 'GET',
-                                  data: {},
-                                  dataType: 'json',
-                                  success: function(data) {
-
-                                    // console.log(data);
-                                  
-                                    for (var i in data.data) {
-                                    
-                                      $("ol").append("<li>"+data.data[i].brewery.name+"</li>");
-                                      
-                                    };
-                                  }
-                              });
-                            };
-  });
-
-});
-</script>
+  <script src="https://use.fontawesome.com/1b5007e643.js"></script>
+  <script src="index.js" type="text/javascript"></script>
 </head>
 <body>
   <div>
